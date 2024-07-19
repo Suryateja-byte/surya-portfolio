@@ -78,7 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0% ;
+  padding: 0%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   transition: none;
   margin: 0;
@@ -176,7 +176,7 @@
 }
 
 .social {
-  background: white;
+  background: #1f1f1f; /* Changed background color to gray */
   border-radius: 0.5vmin;
   color: var(--c);
   padding: 1.5vmin;
@@ -194,11 +194,12 @@
 .social h3 {
   margin-top: 0;
   margin-bottom: 0.3vmin;
-  font-weight: 400;
-  font-size: 2vmin;
+  font-weight: 500;
+  font-size: 2.5vmin;
   opacity: 0;
   transition: .2s calc(.15s + (2 - var(--i)) * .05s);
   text-align: left;
+  ;
 }
 
 .social span {
@@ -209,9 +210,19 @@
   transition: .2s calc(.1s + (2 - var(--i)) * .05s);
 }
 
-.social__content{
+.social__content {
   display: flex;
   flex-direction: column;
+}
+
+.social__content h3 {
+  font-size: 1.7vmin;
+  margin: 0;
+}
+
+.social__content span {
+  font-size: 1.7vmin;
+  color: #AAA;
 }
 
 .social__icon {
@@ -351,7 +362,7 @@ body {
     width: 30vmin; /* Increase width for better tap target */
     height: 8vmin; /* Increase height for visibility */
     font-size: 5vmin; /* Increase font size for readability */
-    top:35vmin;
+    top: 35vmin;
   }
   .contact__toggle span {
     line-height: 9vmin; /* Adjust line height to match button height */
@@ -366,8 +377,8 @@ body {
   }
   
   .social {
-    background: white;
-    border-radius: 0.5vmin;
+    background: #1f1f1f; /* Changed background color to gray */
+    border-radius: 1.5vmin;
     color: var(--c);
     padding: 1.5vmin;
     display: flex;
@@ -379,7 +390,6 @@ body {
     transition: .2s calc(.3s + (2 - var(--i)) * .05s);
     width: 90%;
     max-width: 500px;
-
   }
   .social__icon {
     margin: 2vmin; /* Space between icon and text */
@@ -388,14 +398,14 @@ body {
     width: 40px;
   }
 
-  .card__inner{
+  .card__inner {
     padding: 6vmin;
   }
-  .card__footer span{
+  .card__footer span {
     font-size: 2vmin;
   }
 
-  .card__footer{
+  .card__footer {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -405,10 +415,10 @@ body {
     top: 35vmin;
   }
 
-  .contact__toggle:after{
+  .contact__toggle:after {
     font-size: 3vmin;
   }
-  .contact.active .contact__toggle{
+  .contact.active .contact__toggle {
     height: 7vmin;
     width: 7vmin;
     border-radius: 50%;

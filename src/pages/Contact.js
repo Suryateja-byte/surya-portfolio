@@ -28,7 +28,7 @@ const Contact = () => {
             <div className="card__inner">
               <div className="card__profile"></div>
               <div className="card__content">
-                <h2>Contact</h2>
+                <h2>Suryatheja Deverakonda</h2>
                 <p>Hi, I'm Surya Theja and I'm a front-end developer and graphic designer</p>
               </div>
             </div>
