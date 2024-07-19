@@ -1,0 +1,425 @@
+/* Ensure the wrap takes full screen height and centers its content */
+.wrap {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  margin-top: 100px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  transition: none;
+}
+
+.contact:hover {
+  transform: none;
+}
+
+.contact__toggle {
+  background: #FFB72C;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 2vmin;
+  color: #C63535;
+  text-transform: uppercase;
+  width: 13vmin;
+  height: 4vmin;
+  cursor: pointer;
+  transition: .7s .4s;
+  position: absolute;
+  top: 15vmin; /* Adjusted for correct positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  border: none;
+  font-weight: bold;
+}
+
+.contact__toggle:after {
+  content: '˄';
+  font-family: monospace;
+  font-weight: bold;
+  position: absolute;
+  font-size: 1.5vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%) scaleX(1.1);
+  opacity: 0;
+  transition: .3s .4s;
+}
+
+.contact__toggle span {
+  line-height: 3vmin;
+  font-size: 1.2vmin;
+  opacity: 1;
+  transition: .3s .75s;
+}
+
+.card {
+  background: #EB524A;
+  border-radius: 0.5vmin;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0% ;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: none;
+  margin: 0;
+}
+
+.card:hover {
+  transform: none;
+}
+
+.card__inner {
+  padding: 3vmin;
+  display: flex;
+  align-items: center;
+}
+
+.card__profile {
+  flex-shrink: 0;
+  background: #C63535;
+  width: 8vmin;
+  height: 8vmin;
+  margin-right: 2vmin;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__profile:before,
+.card__profile:after {
+  position: absolute;
+  content: '';
+  display: block;
+  border-radius: 50%;
+  top: 1vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #AC1A1A;
+}
+
+.card__profile:before {
+  width: 2vmin;
+  height: 2vmin;
+}
+
+.card__profile:after {
+  width: 8vmin;
+  height: 8vmin;
+  top: 4vmin;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2vmin;
+}
+
+.card__content h2 {
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  font-size: 2vmin;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+.card__content p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.5vmin;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+.card__footer {
+  background: #C83531;
+  text-transform: uppercase;
+  font-size: 1.4vmin;
+  font-weight: 400;
+  letter-spacing: 0.1vmin;
+  overflow: hidden;
+  max-height: 0; /* Increased max-height */
+  height: 6vmin; /* Increased height */
+  line-height: 6vmin; /* Ensure line-height matches the new height */
+  transition: .3s .4s;
+  width: 100%;
+}
+
+
+.card__footer span {
+  transition: .4s .35s;
+  transform: scale(0);
+  transform-origin: center;
+  display: inline-block;
+  opacity: 0;
+}
+
+.social {
+  background: white;
+  border-radius: 0.5vmin;
+  color: var(--c);
+  padding: 1.5vmin;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5vmin;
+  position: relative;
+  opacity: 0;
+  transform: scale(.8);
+  transition: .2s calc(.3s + (2 - var(--i)) * .05s);
+  width: 80%;
+  max-width: 500px;
+}
+
+.social h3 {
+  margin-top: 0;
+  margin-bottom: 0.3vmin;
+  font-weight: 400;
+  font-size: 2vmin;
+  opacity: 0;
+  transition: .2s calc(.15s + (2 - var(--i)) * .05s);
+  text-align: left;
+}
+
+.social span {
+  color: #AAA;
+  font-weight: 300;
+  font-size: 1.9vmin;
+  opacity: 0;
+  transition: .2s calc(.1s + (2 - var(--i)) * .05s);
+}
+
+.social__content{
+  display: flex;
+  flex-direction: column;
+}
+
+.social__icon {
+  flex-shrink: 0;
+  width: 6vmin;
+  height: 6vmin;
+  background: var(--c);
+  border-radius: 50%;
+  margin-right: 1.5vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: .2s calc((2 - var(--i)) * .05s);
+  transform: scale(.8);
+}
+
+.social__icon svg {
+  max-width: 2vmin;
+  max-height: 2vmin;
+  width: 100%;
+}
+
+.social:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(50% - 0.5vmin);
+  right: 2vmin;
+  transform: rotate(45deg) translate(-0.5vmin, 0.5vmin);
+  width: 1vmin;
+  height: 1vmin;
+  border-top: 0.2vmin solid rgba(0, 0, 0, 0.12);
+  border-right: 0.2vmin solid rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: .3s calc((2 - var(--i)) * .05s);
+}
+
+.contact.active {
+  height: auto;
+  transition: .6s;
+}
+
+.contact.active .contact__toggle {
+  height: 4vmin;
+  width: 4vmin;
+  left: calc(50% + 17vmin);
+  top: 15vmin;
+  transition: .4s;
+}
+
+.contact.active .contact__toggle:after {
+  opacity: 1;
+  transition: .5s .3s;
+}
+
+.contact.active .contact__toggle span {
+  transform: scale(0);
+  opacity: 0;
+  transition: .2s;
+}
+
+.contact.active .card__footer {
+  max-height: 6vmin;
+  transition-delay: 0s;
+}
+
+.contact.active .card__footer span {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: .05s;
+}
+
+.contact.active .social {
+  opacity: 1;
+  transform: scale(1);
+  transition: .2s calc(.3s + var(--i) * .1s);
+}
+
+.contact.active .social__icon {
+  opacity: 1;
+  transform: scale(1);
+  transition: .4s calc(.4s + var(--i) * .1s);
+}
+
+.contact.active .social h3 {
+  opacity: 1;
+  transition: .3s calc(.45s + var(--i) * .1s);
+}
+
+.contact.active .social span {
+  opacity: 1;
+  transition: .3s calc(.5s + var(--i) * .1s);
+}
+
+.contact.active .social:after {
+  opacity: 1;
+  transform: rotate(45deg);
+  transition: .3s calc(.5s + var(--i) * .1s);
+}
+
+.dribbble {
+  position: absolute;
+  bottom: 2vmin;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5vmin;
+  letter-spacing: 0.1vmin;
+  opacity: .6;
+  font-weight: 200;
+}
+
+.dribbble a {
+  color: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  font-size: 1.8vmin;
+  color: white;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    margin-top: 50px; /* Reduce top margin */
+  }
+  .contact__toggle {
+    width: 30vmin; /* Increase width for better tap target */
+    height: 8vmin; /* Increase height for visibility */
+    font-size: 5vmin; /* Increase font size for readability */
+    top:35vmin;
+  }
+  .contact__toggle span {
+    line-height: 9vmin; /* Adjust line height to match button height */
+    font-size: 2vmin; /* Increase font size for readability */
+  }
+  .card {
+    width: 90%; /* Increase width to use more screen space */
+    border-radius: 10px;
+  }
+  .card__content h2, .card__content p, .social__content h3, .social__content span {
+    font-size: 4vmin; /* Increase font size for readability */
+  }
+  
+  .social {
+    background: white;
+    border-radius: 0.5vmin;
+    color: var(--c);
+    padding: 1.5vmin;
+    display: flex;
+    align-items: center;
+    margin-top: 2.6vmin;
+    position: relative;
+    opacity: 0;
+    transform: scale(.8);
+    transition: .2s calc(.3s + (2 - var(--i)) * .05s);
+    width: 90%;
+    max-width: 500px;
+
+  }
+  .social__icon {
+    margin: 2vmin; /* Space between icon and text */
+    margin-right: 3vmin;
+    height: 40px;
+    width: 40px;
+  }
+
+  .card__inner{
+    padding: 6vmin;
+  }
+  .card__footer span{
+    font-size: 2vmin;
+  }
+
+  .card__footer{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .contact.active .contact__toggle {
+    left: calc(50% + 28vmin);
+    top: 35vmin;
+  }
+
+  .contact__toggle:after{
+    font-size: 3vmin;
+  }
+  .contact.active .contact__toggle{
+    height: 7vmin;
+    width: 7vmin;
+    border-radius: 50%;
+  }
+
+  .social__icon svg {
+    max-width: 3vmin;
+    max-height: 3vmin;
+  }
+  .card__profile {
+    width: 10vmin;
+    height: 10vmin;
+  }
+}

@@ -1,0 +1,67 @@
+/* About.css */
+
+.about-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.about-description-container {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 2rem;
+  text-align: justify;
+  transition: all 0.3s;
+  background-color: black;
+}
+
+.about-description-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Default font size */
+}
+
+.about-description-container p {
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  word-spacing: 2px;
+  font-size: 1rem; /* Default font size */
+  color: #fff; /* Ensure text is white */
+}
+
+.about-description-container p:first-child::first-letter {
+  color: #FE5F55;
+  font-weight: bold;
+  font-size: 50px; /* Default font size */
+  float: left;
+  line-height: 45px;
+  padding-right: 8px;
+  margin-top: -3px;
+}
+
+@media screen and (max-width: 600px) {
+  .about-description-container {
+      width: 100%;
+      padding: 1rem;
+  }
+
+  .about-description-container h2 {
+      font-size: 3rem; /* Increased font size for mobile screens */
+  }
+
+  .about-description-container p {
+      font-size: 1.75rem; /* Increased font size for mobile screens */
+  }
+
+  .about-description-container p:first-child::first-letter {
+      font-size: 60px; /* Increased font size for mobile screens */
+  }
+}
+
+.about-description-container {
+  background-color: black;
+}
